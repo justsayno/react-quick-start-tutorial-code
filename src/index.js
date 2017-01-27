@@ -1,29 +1,28 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 
-const Sidebar = (props) => (
-   <aside className='sidebar'>
-     {props.children}
-   </aside>
+// Written as arrow function
+const CraftBeer = ({beerName, brewery}) => (
+  <div className='craftBeer'>
+    <h3>{beerName}</h3>
+    <p>Brewrey: {brewery}</p>
+  </div>
 )
 
 class App extends Component {
-  render = () => (
-    <div className='App'>
-      <div>Main Content</div>
-      <Sidebar>
-        <div className='widget'>
-          Widget 1
-        </div>
-        <div className='widget'>
-          Widget 2
-        </div>
-      </Sidebar>
-    </div>
-  )
+  render() {
+    return (
+      <div className='App'>
+        Welcome to Crafty Code!
+        <CraftBeer beerName='Book Binder' brewery='Emersons' />
+        <CraftBeer beerName='Pernicious Weed' brewery='Garage Project' />
+        <CraftBeer beerName='Bitter Bitch' brewery='Parrot Dog' />
+      </div>
+    )
+  }
 }
 
 ReactDOM.render(
-  <App />,
+  <App appName='React' />,
   document.getElementById('root')
-);
+)
